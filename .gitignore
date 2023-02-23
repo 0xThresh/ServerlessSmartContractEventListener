@@ -1,0 +1,7 @@
+.env
+.terraform/*
+.terraform*
+terraform.state*
+terraform.tfstate*
+node_modules/
+package*.json
