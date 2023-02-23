@@ -23,9 +23,9 @@ You must have Terraform installed. I personally recommend downloading it with `t
 Once all the above prerequisites are met, the following Terraform commands can be run to begin building the resources. 
 
 ### Example Run Commands 
-`cd ./terraform/prod`
-`terraform init`
-`terraform apply`
+1. `cd ./terraform/prod`
+2. `terraform init`
+3. `terraform apply`
 
 ### Deployment Sequence 
 When building the resources, the following steps are performed (which can be viewed in detail in the `terraform/prod/main.tf` file): 
@@ -36,8 +36,8 @@ When building the resources, the following steps are performed (which can be vie
 
 ## Destroying Resources 
 In order to destroy all resources with Terraform, run the following commands: 
-`cd ./terraform/prod`
-`terraform destroy`
+1. `cd ./terraform/prod`
+2. `terraform destroy`
 
 ## Troubleshooting
 1. Error: invalid contract address or ENS name (argument="addressOrName", value=undefined, code=INVALID_ARGUMENT, version=contracts/5.7.0)
