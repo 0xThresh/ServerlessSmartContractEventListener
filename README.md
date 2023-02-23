@@ -6,7 +6,7 @@ Space Warp hackathon in 2023, but could be used as a starting point for many oth
 
 ## Infrastructure
 A few components are built to support this backend. An ECS service on Fargate acts as an event listener, which listens for a specific smart contract event. When the event is emitted, its return values are gathered by the listener, and sent to a message in SQS. The SQS message then triggers an AWS Lambda function, which then performs an action (in my case, reaching out to filrep.io to determine a miner ID's reputation) and then uses the output of that action as inputs for another smart contract transaction. The diagram below visualizes the process. 
-<Insert Diagram Here>
+![reputation-checker](https://user-images.githubusercontent.com/104535511/220817741-4bfdc93c-b270-43a5-8c28-556172848627.png)
 
 ## Prerequisites
 A basic understanding of AWS and Terraform is helpful in using this codebase. If you have not worked with either before, the most important thing for you to know is that **AWS resources cost money, and that you need to destroy any resources you build that you don't plan to keep using so you don't get charged. THE RESOURCES BUILT BY RUNNING THIS CODE WILL COST YOU MONEY, AND I AM NOT RESPONSIBLE FOR ANY CHARGES YOU INCUR BY NOT DELETING THESE RESOURCES.** I've included a section below to destroy the resources once you've tested them so you can avoid giving your money to AWS unintentionally. If you only run the resources for a very short period of time, you should not incur any significant charges. 
